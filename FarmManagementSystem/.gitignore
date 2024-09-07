@@ -1,0 +1,44 @@
+﻿# Ignore Visual Studio temporary files, build results, and other commonly unwanted files.
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated VS files and indexes
+.vs/
+*.vsidx
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+[Bb]uild/
+
+# Log files
+*.log
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Other common temp files
+*.tmp
+*.obj
+*.cache
+*.pdb
+*.exe
+*.dll
+*.nupkg
+*.map
+
+# Ignore build output directories
+bin/
+obj/
+
+# Ignore only the appsettings.Development.json
+appsettings.Development.json
