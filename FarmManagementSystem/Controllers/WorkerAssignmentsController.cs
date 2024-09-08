@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using FarmManagementSystem.Data;
-using FarmManagementSystem.Models;
 using FarmManagementSystem.DTOs;
-using FarmManagementSystem.Mappers;
+using FarmManagementSystem.Services.Interfaces;
 
 namespace FarmManagementSystem.Controllers
 {
@@ -16,39 +10,36 @@ namespace FarmManagementSystem.Controllers
     [ApiController]
     public class WorkerAssignmentsController : ControllerBase
     {
-        private readonly FarmDbContext _context;
+        private readonly IWorkerAssignmentService _workerAssignmentService;
 
-        public WorkerAssignmentsController(FarmDbContext context)
+        public WorkerAssignmentsController(IWorkerAssignmentService workerAssignmentService)
         {
-            _context = context;
+            _workerAssignmentService = workerAssignmentService;
         }
 
         // GET: api/WorkerAssignments
         [HttpGet]
         public async Task<ActionResult<IEnumerable<WorkerAssignmentDTO>>> GetWorkerAssignments()
         {
-            var workerAssignments = await _context.WorkerAssignments.ToListAsync();
-            var workerAssignmentDTOs = workerAssignments.Select(wa => WorkerAssignmentMapper.ToDTO(wa)).ToList();
-            return Ok(workerAssignmentDTOs);  // Return list of WorkerAssignmentDTOs
+            var workerAssignments = await _workerAssignmentService.GetAllWorkerAssignmentsAsync();
+            return Ok(workerAssignments);
         }
 
-        // GET: api/WorkerAssignments/5
+        // GET: api/WorkerAssignments/5/10
         [HttpGet("{workerId}/{fieldId}")]
         public async Task<ActionResult<WorkerAssignmentDTO>> GetWorkerAssignment(int workerId, int fieldId)
         {
-            var workerAssignment = await _context.WorkerAssignments
-                .FirstOrDefaultAsync(wa => wa.WorkerID == workerId && wa.FieldID == fieldId);
+            var workerAssignment = await _workerAssignmentService.GetWorkerAssignmentByIdAsync(workerId, fieldId);
 
             if (workerAssignment == null)
             {
                 return NotFound();
             }
 
-            return Ok(WorkerAssignmentMapper.ToDTO(workerAssignment));  // Return WorkerAssignmentDTO
+            return Ok(workerAssignment);
         }
 
-        // PUT: api/WorkerAssignments/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // PUT: api/WorkerAssignments/5/10
         [HttpPut("{workerId}/{fieldId}")]
         public async Task<IActionResult> PutWorkerAssignment(int workerId, int fieldId, WorkerAssignmentDTO workerAssignmentDTO)
         {
@@ -57,94 +48,39 @@ namespace FarmManagementSystem.Controllers
                 return BadRequest();
             }
 
-            var workerAssignment = WorkerAssignmentMapper.ToEntity(workerAssignmentDTO);  // Convert DTO to entity
-            _context.Entry(workerAssignment).State = EntityState.Modified;
-
-            try
+            var result = await _workerAssignmentService.UpdateWorkerAssignmentAsync(workerId, fieldId, workerAssignmentDTO);
+            if (!result)
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!WorkerAssignmentExists(workerId, fieldId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return NotFound();
             }
 
             return NoContent();
         }
 
         // POST: api/WorkerAssignments
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<WorkerAssignmentDTO>> PostWorkerAssignment(WorkerAssignmentDTO workerAssignmentDTO)
         {
-            // Ensure that only the WorkerAssignment is being added
-            var workerAssignment = WorkerAssignmentMapper.ToEntity(workerAssignmentDTO);
-
-            // Ensure the entities are only being referenced and not modified
-            var existingField = await _context.Fields
-                .AsNoTracking()
-                .FirstOrDefaultAsync(f => f.FieldID == workerAssignment.FieldID);
-
-            var existingWorker = await _context.Workers
-                .AsNoTracking()
-                .FirstOrDefaultAsync(w => w.WorkerID == workerAssignment.WorkerID);
-
-            if (existingField == null || existingWorker == null)
+            var createdWorkerAssignment = await _workerAssignmentService.CreateWorkerAssignmentAsync(workerAssignmentDTO);
+            if (createdWorkerAssignment == null)
             {
                 return BadRequest("Field or Worker does not exist.");
             }
 
-            _context.WorkerAssignments.Add(workerAssignment);
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException ex)
-            {
-                // Log or handle exception
-                if (WorkerAssignmentExists(workerAssignment.WorkerID, workerAssignment.FieldID))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            var createdWorkerAssignmentDTO = WorkerAssignmentMapper.ToDTO(workerAssignment);
-            return CreatedAtAction("GetWorkerAssignment", new { workerId = workerAssignment.WorkerID, fieldId = workerAssignment.FieldID }, createdWorkerAssignmentDTO);
+            return CreatedAtAction("GetWorkerAssignment", new { workerId = createdWorkerAssignment.WorkerID, fieldId = createdWorkerAssignment.FieldID }, createdWorkerAssignment);
         }
 
-        // DELETE: api/WorkerAssignments/5
+        // DELETE: api/WorkerAssignments/5/10
         [HttpDelete("{workerId}/{fieldId}")]
         public async Task<IActionResult> DeleteWorkerAssignment(int workerId, int fieldId)
         {
-            var workerAssignment = await _context.WorkerAssignments
-                .FirstOrDefaultAsync(wa => wa.WorkerID == workerId && wa.FieldID == fieldId);
-
-            if (workerAssignment == null)
+            var result = await _workerAssignmentService.DeleteWorkerAssignmentAsync(workerId, fieldId);
+            if (!result)
             {
                 return NotFound();
             }
 
-            _context.WorkerAssignments.Remove(workerAssignment);
-            await _context.SaveChangesAsync();
-
             return NoContent();
-        }
-
-        private bool WorkerAssignmentExists(int workerId, int fieldId)
-        {
-            return _context.WorkerAssignments.Any(e => e.WorkerID == workerId && e.FieldID == fieldId);
         }
     }
 }

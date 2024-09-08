@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using FarmManagementSystem.Data;
-using FarmManagementSystem.Models;
 using FarmManagementSystem.DTOs;
-using FarmManagementSystem.Mappers;
+using FarmManagementSystem.Services.Interfaces;
 
 namespace FarmManagementSystem.Controllers
 {
@@ -16,38 +10,36 @@ namespace FarmManagementSystem.Controllers
     [ApiController]
     public class WorkersController : ControllerBase
     {
-        private readonly FarmDbContext _context;
+        private readonly IWorkerService _workerService;
 
-        public WorkersController(FarmDbContext context)
+        public WorkersController(IWorkerService workerService)
         {
-            _context = context;
+            _workerService = workerService;
         }
 
         // GET: api/Workers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<WorkerDTO>>> GetWorkers()
         {
-            var workers = await _context.Workers.ToListAsync();
-            var workerDTOs = workers.Select(worker => WorkerMapper.ToDTO(worker)).ToList();
-            return Ok(workerDTOs);  // Return list of WorkerDTOs
+            var workers = await _workerService.GetAllWorkersAsync();
+            return Ok(workers);
         }
 
         // GET: api/Workers/5
         [HttpGet("{id}")]
         public async Task<ActionResult<WorkerDTO>> GetWorker(int id)
         {
-            var worker = await _context.Workers.FindAsync(id);
+            var worker = await _workerService.GetWorkerByIdAsync(id);
 
             if (worker == null)
             {
                 return NotFound();
             }
 
-            return Ok(WorkerMapper.ToDTO(worker));  // Return WorkerDTO
+            return Ok(worker);
         }
 
         // PUT: api/Workers/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutWorker(int id, WorkerDTO workerDTO)
         {
@@ -56,60 +48,34 @@ namespace FarmManagementSystem.Controllers
                 return BadRequest();
             }
 
-            var worker = WorkerMapper.ToEntity(workerDTO);  // Convert DTO to entity
-            _context.Entry(worker).State = EntityState.Modified;
-
-            try
+            var result = await _workerService.UpdateWorkerAsync(id, workerDTO);
+            if (!result)
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!WorkerExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return NotFound();
             }
 
             return NoContent();
         }
 
         // POST: api/Workers
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<WorkerDTO>> PostWorker(WorkerDTO workerDTO)
         {
-            var worker = WorkerMapper.ToEntity(workerDTO);  // Convert DTO to entity
-            _context.Workers.Add(worker);
-            await _context.SaveChangesAsync();
-
-            var createdWorkerDTO = WorkerMapper.ToDTO(worker);  // Convert saved entity back to DTO
-            return CreatedAtAction("GetWorker", new { id = worker.WorkerID }, createdWorkerDTO);
+            var createdWorkerDTO = await _workerService.CreateWorkerAsync(workerDTO);
+            return CreatedAtAction(nameof(GetWorker), new { id = createdWorkerDTO.WorkerID }, createdWorkerDTO);
         }
 
         // DELETE: api/Workers/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteWorker(int id)
         {
-            var worker = await _context.Workers.FindAsync(id);
-            if (worker == null)
+            var result = await _workerService.DeleteWorkerAsync(id);
+            if (!result)
             {
                 return NotFound();
             }
 
-            _context.Workers.Remove(worker);
-            await _context.SaveChangesAsync();
-
             return NoContent();
-        }
-
-        private bool WorkerExists(int id)
-        {
-            return _context.Workers.Any(e => e.WorkerID == id);
         }
     }
 }

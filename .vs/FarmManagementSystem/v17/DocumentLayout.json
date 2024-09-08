@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|c:\\users\\sideris\\source\\repos\\farmmanagementsystem\\farmmanagementsystem\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|solutionrelative:farmmanagementsystem\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|c:\\users\\sideris\\source\\repos\\farmmanagementsystem\\farmmanagementsystem\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|solutionrelative:farmmanagementsystem\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|c:\\users\\sideris\\source\\repos\\farmmanagementsystem\\farmmanagementsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|solutionrelative:farmmanagementsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|c:\\users\\sideris\\source\\repos\\farmmanagementsystem\\farmmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|solutionrelative:farmmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|c:\\users\\sideris\\source\\repos\\farmmanagementsystem\\farmmanagementsystem\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|solutionrelative:farmmanagementsystem\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|c:\\users\\sideris\\source\\repos\\farmmanagementsystem\\farmmanagementsystem\\controllers\\workerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|solutionrelative:farmmanagementsystem\\controllers\\workerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|c:\\users\\sideris\\source\\repos\\farmmanagementsystem\\farmmanagementsystem\\services\\implementations\\workerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|solutionrelative:farmmanagementsystem\\services\\implementations\\workerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|c:\\users\\sideris\\source\\repos\\farmmanagementsystem\\farmmanagementsystem\\services\\interfaces\\iworkerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|solutionrelative:farmmanagementsystem\\services\\interfaces\\iworkerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|c:\\users\\sideris\\source\\repos\\farmmanagementsystem\\farmmanagementsystem\\controllers\\workerassignmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|solutionrelative:farmmanagementsystem\\controllers\\workerassignmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|c:\\users\\sideris\\source\\repos\\farmmanagementsystem\\farmmanagementsystem\\services\\interfaces\\iworkerassignmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D104802-BCE8-4C54-A012-70041ACDB99F}|FarmManagementSystem\\FarmManagementSystem.csproj|solutionrelative:farmmanagementsystem\\services\\interfaces\\iworkerassignmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,67 +54,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\.gitignore",
-              "RelativeDocumentMoniker": "FarmManagementSystem\\.gitignore",
-              "ToolTip": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\.gitignore",
-              "RelativeToolTip": "FarmManagementSystem\\.gitignore",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAFAAAA",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVDhPjVNLTgJBEG1lwpoFB3GNK9fieA48hD8iwT/ihwgSDAIHgAGXXsEV18CNzL/LquqZdsYM6kteXqcy3fWqpmpNRBgOhyABBEgpAFVKPIMUcYzUyOU\u002BXM/b2qtU3vkSfRjjZTCAMAw1A2LwzdFoBPP5HNqdzuL27n4juibWI\u002BUshBA1DIkhEx9iEorFotgslQqGYbxxAGFEqt1MxmPWJLbLZdZ\u002Bv89q5PMFPiTR6z2zdaxR0fXA0XTBcVywkb4fwHXjRteecIDNQ7UmExVYAdPcxYaqclN46na5WenMKjtlVnTYwcXlVYaDqImW9beD5N/TeGy32QHXm6hZ03ZgiSQHp2fnWQ4oBmJqWSqwAqZpZjt4aLXAD4J0VqyZsmoubfB8H2r1eoaD6NXZ9HcHO\u002BSA3f4AjifXl8rItOETM8ckB9WTWpYD9RdeZ1PWVWAHWXPQaDb59f/w8LiqHeh1pvGkCaP6qB8yXusoxmuNZ7XmII4O9vGuEF86osuDYRkpYQAAAABJRU5ErkJggg==",
-              "WhenOpened": "2024-09-07T10:44:49.588Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\Program.cs",
-              "RelativeDocumentMoniker": "FarmManagementSystem\\Program.cs",
-              "ToolTip": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\Program.cs",
-              "RelativeToolTip": "FarmManagementSystem\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwkAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-07T10:33:05.081Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "FarmManagementSystem\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\Properties\\launchSettings.json",
-              "RelativeToolTip": "FarmManagementSystem\\Properties\\launchSettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-07T10:28:24.086Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "FarmManagementSystem\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\appsettings.Development.json",
-              "RelativeToolTip": "FarmManagementSystem\\appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwkAAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-07T10:15:47.261Z",
+              "Title": "WorkersController.cs",
+              "DocumentMoniker": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\Controllers\\WorkersController.cs",
+              "RelativeDocumentMoniker": "FarmManagementSystem\\Controllers\\WorkersController.cs",
+              "ToolTip": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\Controllers\\WorkersController.cs",
+              "RelativeToolTip": "FarmManagementSystem\\Controllers\\WorkersController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T12:37:14.991Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\appsettings.json",
-              "RelativeDocumentMoniker": "FarmManagementSystem\\appsettings.json",
-              "ToolTip": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\appsettings.json",
-              "RelativeToolTip": "FarmManagementSystem\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwEAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-06T15:31:01.003Z",
+              "Title": "WorkerService.cs",
+              "DocumentMoniker": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\Services\\Implementations\\WorkerService.cs",
+              "RelativeDocumentMoniker": "FarmManagementSystem\\Services\\Implementations\\WorkerService.cs",
+              "ToolTip": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\Services\\Implementations\\WorkerService.cs",
+              "RelativeToolTip": "FarmManagementSystem\\Services\\Implementations\\WorkerService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAEgAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T12:31:51.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IWorkerService.cs",
+              "DocumentMoniker": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\Services\\Interfaces\\IWorkerService.cs",
+              "RelativeDocumentMoniker": "FarmManagementSystem\\Services\\Interfaces\\IWorkerService.cs",
+              "ToolTip": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\Services\\Interfaces\\IWorkerService.cs",
+              "RelativeToolTip": "FarmManagementSystem\\Services\\Interfaces\\IWorkerService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T12:30:10.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WorkerAssignmentsController.cs",
+              "DocumentMoniker": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\Controllers\\WorkerAssignmentsController.cs",
+              "RelativeDocumentMoniker": "FarmManagementSystem\\Controllers\\WorkerAssignmentsController.cs",
+              "ToolTip": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\Controllers\\WorkerAssignmentsController.cs",
+              "RelativeToolTip": "FarmManagementSystem\\Controllers\\WorkerAssignmentsController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAA2wFYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T12:03:58.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IWorkerAssignmentService.cs",
+              "DocumentMoniker": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\Services\\Interfaces\\IWorkerAssignmentService.cs",
+              "RelativeDocumentMoniker": "FarmManagementSystem\\Services\\Interfaces\\IWorkerAssignmentService.cs",
+              "ToolTip": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\Services\\Interfaces\\IWorkerAssignmentService.cs",
+              "RelativeToolTip": "FarmManagementSystem\\Services\\Interfaces\\IWorkerAssignmentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T12:00:51.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\Program.cs",
+              "RelativeDocumentMoniker": "FarmManagementSystem\\Program.cs",
+              "ToolTip": "C:\\Users\\Sideris\\source\\repos\\FarmManagementSystem\\FarmManagementSystem\\Program.cs",
+              "RelativeToolTip": "FarmManagementSystem\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T11:44:45.349Z",
               "EditorCaption": ""
             }
           ]

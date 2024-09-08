@@ -9,6 +9,7 @@ using FarmManagementSystem.Data;
 using FarmManagementSystem.DTOs;
 using FarmManagementSystem.Models;
 using FarmManagementSystem.Mappers;
+using FarmManagementSystem.Services.Interfaces;
 
 namespace FarmManagementSystem.Controllers
 {
@@ -16,44 +17,28 @@ namespace FarmManagementSystem.Controllers
     [ApiController]
     public class CropsController : ControllerBase
     {
-        private readonly FarmDbContext _context;
+        private readonly ICropService _cropService;
 
-        public CropsController(FarmDbContext context)
+        public CropsController(ICropService cropService)
         {
-            _context = context;
+            _cropService = cropService;
         }
 
         // GET: api/Crops
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CropDTO>>> GetCrops()
         {
-            var crops = await _context.Crops
-                .Include(c => c.Field)
-                .ToListAsync();
-
-            // Use CropMapper to map the list of Crop entities to CropDTOs
-            var cropDTOs = crops.Select(c => CropMapper.ToDTO(c)).ToList();
-
-            return Ok(cropDTOs);
+            var crops = await _cropService.GetAllCropsAsync();
+            return Ok(crops);
         }
 
         // GET: api/Crops/5
         [HttpGet("{id}")]
         public async Task<ActionResult<CropDTO>> GetCrop(int id)
         {
-            var crop = await _context.Crops
-                .Include(c => c.Field)
-                .FirstOrDefaultAsync(c => c.CropID == id);
-
-            if (crop == null)
-            {
-                return NotFound();
-            }
-
-            // Use CropMapper to convert the entity to DTO
-            var cropDTO = CropMapper.ToDTO(crop);
-
-            return cropDTO;
+            var crop = await _cropService.GetCropByIdAsync(id);
+            if (crop == null) return NotFound();
+            return Ok(crop);
         }
 
         // PUT: api/Crops/5
@@ -61,32 +46,8 @@ namespace FarmManagementSystem.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCrop(int id, CropDTO cropDTO)
         {
-            if (id != cropDTO.CropID)
-            {
+            if(!await _cropService.UpdateCropAsync(id,cropDTO)) 
                 return BadRequest();
-            }
-
-            // Convert DTO to entity using CropMapper
-            var crop = CropMapper.ToEntity(cropDTO);
-
-            _context.Entry(crop).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CropExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
             return NoContent();
         }
 
@@ -95,37 +56,16 @@ namespace FarmManagementSystem.Controllers
         [HttpPost]
         public async Task<ActionResult<CropDTO>> PostCrop(CropDTO cropDTO)
         {
-            // Convert DTO to entity using CropMapper
-            var crop = CropMapper.ToEntity(cropDTO);
-
-            _context.Crops.Add(crop);
-            await _context.SaveChangesAsync();
-
-            // Return the newly created crop as cropDTO
-            var createdCropDTO = CropMapper.ToDTO(crop);
-
-            return CreatedAtAction("GetCrop", new { id = crop.CropID }, createdCropDTO);
+            var createdCrop = await _cropService.CreateCropAsync(cropDTO);
+            return CreatedAtAction(nameof(GetCrop), new { id = createdCrop.CropID }, createdCrop);
         }
 
         // DELETE: api/Crops/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCrop(int id)
         {
-            var crop = await _context.Crops.FindAsync(id);
-            if (crop == null)
-            {
-                return NotFound();
-            }
-
-            _context.Crops.Remove(crop);
-            await _context.SaveChangesAsync();
-
+            if (!await _cropService.DeleteCropAsync(id)) return NotFound();
             return NoContent();
-        }
-
-        private bool CropExists(int id)
-        {
-            return _context.Crops.Any(e => e.CropID == id);
         }
     }
 }
