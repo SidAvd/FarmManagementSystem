@@ -53,7 +53,8 @@ Apply Migrations
 
 •	Run the following command to apply the database migrations: Update-Database
 
-Update-Database
+
+## Test the Project
 
 1.	Run the Project
 Press F5 or click the Run button in Visual Studio to build and run the project. The API will start, and Visual Studio will open a browser window with the Swagger UI.
