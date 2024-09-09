@@ -48,7 +48,7 @@ Apply Migrations
 
 •	Open Package Manager Console in Visual Studio (Tools > NuGet Package Manager > Package Manager Console).
 
-•	Run the following command to apply the database migrations:
+•	Run the following command to apply the database migrations: Update-Database
 
 Update-Database
 
