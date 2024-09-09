@@ -3,18 +3,28 @@ The Farm Management System is a web API designed to streamline and manage the va
 
 ## Features
 •	Manage crops and fields
+
 •	Record and track harvest data
+
 •	Assign workers to specific fields and tasks
+
 •	Manage worker information and assignments
+
 •	REST API endpoints with full CRUD functionality
+
 •	Use of Swagger for API documentation and testing
+
 
 
 ## Technologies Used
 •	.NET 6: The main framework for building the API.
+
 •	Entity Framework Core: To handle database interactions using a code-first approach.
+
 •	SQL Server: The database system for storing farm management data.
+
 •	Swagger: For API documentation and testing.
+
 
 ## Setup Instructions
 Prerequisites
