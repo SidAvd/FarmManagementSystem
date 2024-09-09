@@ -29,7 +29,7 @@ The Farm Management System is a web API designed to streamline and manage the va
 ## Setup Instructions
 Prerequisites:
 
-•	Visual Studio (with .NET 6 SDK or later)
+•	Visual Studio (with .NET 8 SDK or later)
 
 •	SQL Server (installed locally or accessible remotely)
 
