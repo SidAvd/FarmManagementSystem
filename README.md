@@ -73,4 +73,5 @@ Steps to Set Up
 
 
 
-![search form 1](<Yugioh_MVC/Images/Form_1.png>)
+![swagger 1](<FarmManagementSystem/Images/Swagger_1.png>)
+![swagger 2](<FarmManagementSystem/Images/Swagger_2.png>)
