@@ -45,6 +45,7 @@ Example:
 "ConnectionStrings": {
   "ApiDbConnectionString": "Server=your_server_name;Database=FarmDb;Trusted_Connection=True;MultipleActiveResultSets=true"
 }
+Note: Ensure that your SQL Server instance is running and that you have created the FarmDb database if needed.
 
 Apply Migrations
 
@@ -58,7 +59,7 @@ Update-Database
 Press F5 or click the Run button in Visual Studio to build and run the project. The API will start, and Visual Studio will open a browser window with the Swagger UI.
 
 2.	Test the API with Swagger
-Once the project is running, Swagger should automatically open in your default browser, where you can test it.
+Once the project is running, Swagger should automatically open in your default browser, where you can test the API endpoints. Swagger provides interactive documentation, allowing you to test each endpoint directly in the browser.
 
 
 
