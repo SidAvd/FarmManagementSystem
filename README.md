@@ -17,7 +17,7 @@ The Farm Management System is a web API designed to streamline and manage the va
 
 
 ## Technologies Used
-•	.NET 6: The main framework for building the API.
+•	.NET 8: The main framework for building the API.
 
 •	Entity Framework Core: To handle database interactions using a code-first approach.
 
