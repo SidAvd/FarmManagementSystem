@@ -50,9 +50,11 @@ Steps to Set Up
    * In Visual Studio, open the appsettings.json file.
    * Update the connection string with your local or remote SQL Server instance.
       Example:
-      "ConnectionStrings": {
-      "ApiDbConnectionString": "Server=your_server_name;Database=FarmDb;Trusted_Connection=True;MultipleActiveResultSets=true"
-      }
+      ```json
+     "ConnectionStrings": {
+       "ApiDbConnectionString": "Server=your_server_name;Database=FarmDb;Trusted_Connection=True;MultipleActiveResultSets=true"
+     }
+     ```
       Note: Ensure that your SQL Server instance is running and that you have created the FarmDb database if needed.
 
 4. Apply Migrations:
