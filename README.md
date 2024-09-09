@@ -1,6 +1,8 @@
 # Farm Management System
 The Farm Management System is a web API designed to streamline and manage the various aspects of a farming operation. Built with .NET 8, the system allows you to manage crops, fields, harvests, worker assignments, and workers through a simple API, making it easier to automate and track the farm's day-to-day activities.
 
+![database 1](<FarmManagementSystem/Images/DB_diagram_1.png>)
+
 ## Features
 •	Manage crops and fields
 
