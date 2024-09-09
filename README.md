@@ -56,7 +56,7 @@ Update-Database
 Press F5 or click the Run button in Visual Studio to build and run the project. The API will start, and Visual Studio will open a browser window with the Swagger UI.
 
 2.	Test the API with Swagger
-Once the project is running, Swagger should automatically open in your default browser. You can access the API documentation and test endpoints from the Swagger UI at https://localhost:5001/swagger (or http://localhost:5000 for HTTP).
+Once the project is running, Swagger should automatically open in your default browser, where you can test it.
 
 
 
