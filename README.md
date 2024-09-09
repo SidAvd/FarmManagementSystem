@@ -37,29 +37,34 @@ Prerequisites:
 Steps to Set Up
 
 1.	Download the Project
+
 Go to the repository's GitHub page. Click the green Code button, then select Download ZIP. Extract the ZIP file to a folder on your local machine.
+
 2.	Open the Project in Visual Studio
+
 Launch Visual Studio. Click on File > Open > Project/Solution. Navigate to the folder where you extracted the ZIP file. Open the FarmManagementSystem.sln file located in the root directory.
-3.	Set Up the Database Connection String. In Visual Studio, open the appsettings.json file. Update the connection string with your local or remote SQL Server instance.
+
+3.	Set Up the Database Connection String.
+In Visual Studio, open the appsettings.json file. Update the connection string with your local or remote SQL Server instance.
 Example:
 "ConnectionStrings": {
   "ApiDbConnectionString": "Server=your_server_name;Database=FarmDb;Trusted_Connection=True;MultipleActiveResultSets=true"
 }
 Note: Ensure that your SQL Server instance is running and that you have created the FarmDb database if needed.
 
-Apply Migrations
+4. Apply Migrations
 
-•	Open Package Manager Console in Visual Studio (Tools > NuGet Package Manager > Package Manager Console).
-
-•	Run the following command to apply the database migrations: Update-Database
+Open Package Manager Console in Visual Studio (Tools > NuGet Package Manager > Package Manager Console). Run the following command to apply the database migrations: Update-Database
 
 
 ## Test the Project
 
 1.	Run the Project
+
 Press F5 or click the Run button in Visual Studio to build and run the project. The API will start, and Visual Studio will open a browser window with the Swagger UI.
 
 2.	Test the API with Swagger
+
 Once the project is running, Swagger should automatically open in your default browser, where you can test the API endpoints. Swagger provides interactive documentation, allowing you to test each endpoint directly in the browser.
 
 
