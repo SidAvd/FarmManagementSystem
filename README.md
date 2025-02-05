@@ -53,9 +53,7 @@ Steps to Set Up
    * Update the connection string with your local or remote SQL Server instance.
       Example:
       ```json
-     "ConnectionStrings": {
-       "ApiDbConnectionString": "Server=your_server_name;Database=FarmDb;Trusted_Connection=True;MultipleActiveResultSets=true"
-     }
+     
      ```
       Note: Ensure that your SQL Server instance is running and that you have created the FarmDb database if needed.
 
